@@ -38,4 +38,27 @@ body{
 .text-center{
     text-align: center;
 }
-/* ------- */
+
+/* Name and Social Icons */
+#name-social-container{
+    margin-top: 20vh;
+}
+
+#my-name{
+    font-size: 4rem;
+    letter-spacing: 0.2rem;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.social-icons li i{
+    padding: 10px;
+    font-size: 2rem;
+}
+
+.social-icons li i:hover{
+    color: lightgray;
+    transition: color 0.5s;
+    text-decoration: none;
+}
