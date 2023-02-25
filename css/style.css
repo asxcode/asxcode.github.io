@@ -62,3 +62,20 @@ body{
     transition: color 0.5s;
     text-decoration: none;
 }
+
+/* About Section */
+#my-image{
+    text-align: center;
+    margin-top: -20vh;
+}
+
+#my-image img{
+    height: 35vh;
+    width: 35vh;
+    border-radius: 50%;
+}
+
+#about{
+    margin-right: 20%;
+    margin-left: 20%;
+}
