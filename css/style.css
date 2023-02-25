@@ -11,3 +11,31 @@ body{
     background-attachment: fixed;
 }
 
+/* Top Navigation */
+.horizontal-list{
+    list-style: none;
+    padding-left: 0px;
+    margin-top: 0px;
+}
+
+.horizontal-list li{
+    display: inline-block;
+    margin: 10px 8px 8px 0px;
+    font-size: 1.1rem;
+}
+
+.horizontal-list li a{
+    color: white;
+    text-decoration: none;
+}
+
+.horizontal-list li a:hover{
+    color: lightgrey;
+    border-bottom: 1px solid lightgrey;
+    transition: color 0.5s;
+}
+
+.text-center{
+    text-align: center;
+}
+/* ------- */
