@@ -65,6 +65,11 @@ body{
     height: 300px;
 }
 
+.foot-container{
+    height: 50px;
+    text-align: center;
+}
+
 .bg-dark{
     background-color: rgba(229,229,229,1);
 }
@@ -105,9 +110,15 @@ body{
     text-align:left;
     position: absolute;
     left: 50%;
+    right: 50%;
     transform: translate(-50%);
 }
 
 .light-bold{
     font-weight: 500;
+}
+
+.center-text{
+    line-height: 50px;
+    width: 90%;
 }
