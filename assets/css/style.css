@@ -122,3 +122,41 @@ body{
     line-height: 50px;
     width: 90%;
 }
+
+#projects{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    display: flex;
+    height: 55vh;
+    width: 100vw;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    row-gap: 10%;
+    overflow-y: scroll;
+}
+
+.project-card{
+    height: 50%;
+    width: 40%;
+    text-align: center;
+}
+
+.project-card .title{
+    font-size: 32px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.project-card .para{
+    margin-top: 20px;
+}
+
+.project-card .link{
+    margin-top: 20px;
+}
+
+.project-card a{
+    all: unset;
+    text-decoration: underline;
+    cursor: pointer;
+}
