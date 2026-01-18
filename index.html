@@ -1,59 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arvind Suthar</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arvind Suthar | Software Engineer</title>
 
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --panel: #0f1623;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #22c55e;
+      --border: #1f2937;
+      --code: #0a0e14;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 24px;
+    }
+
+    .section { margin-top: 80px; }
+
+    h1, h2, h3 { font-weight: 600; }
+
+    h2 { margin-bottom: 16px; }
+
+    a { color: var(--accent); text-decoration: none; }
+
+    /* Terminal chrome */
+    .terminal {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .terminal-bar {
+      display: flex;
+      gap: 8px;
+      padding: 10px;
+      background: #0c1220;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .dot { width: 12px; height: 12px; border-radius: 50%; }
+    .red { background: #ff5f56; }
+    .yellow { background: #ffbd2e; }
+    .green { background: #27c93f; }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 10;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    /* Hero */
+    .hero { margin-top: 100px; }
+
+    .prompt {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 { font-size: 2.4rem; }
+
+    .hero p {
+      margin: 16px 0 24px;
+      color: var(--muted);
+      max-width: 650px;
+    }
+
+    .btn {
+      display: inline-block;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    .btn:hover { background: rgba(34,197,94,0.1); }
+
+    /* Experience cards */
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      background: var(--panel);
+      margin-bottom: 24px;
+    }
+
+    .card h3 { margin-bottom: 6px; }
+
+    .meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    ul li { margin-bottom: 8px; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .tags span {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.7rem;
+      padding: 4px 8px;
+      border-radius: 4px;
+      background: var(--code);
+      color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 80px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero h1 { font-size: 1.9rem; }
+    }
+  </style>
 </head>
+
 <body>
-    <nav id="navbar">
-        <img src="./assets/images/icon.png" id="top-image">
-        <div id="top-name">Arvind Suthar</div>
-        <div id="page-nav">
-            <ul>
-                <span class="light-bold"><li>Home</li></span>
-                <li>•</li>
-                <a href="projects.html" style="all: unset; cursor: pointer"><li>Projects</li></a>
-            </ul>
-        </div>
-    </nav>
 
-    <section>
-        <div id="header">
-            <span id="title">Arvind Suthar</span><br>
-            <div id="horizontal-line"></div><br>
-            <span id="para">Machine Learning, Deep Learning, and Natural Language Processing</span>
-        </div>
+<header>
+  <div class="container nav">
+    <div class="logo">arvind@backend:~$</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
 
-        <div class="container bg-dark">
-            <div id="about">
-                <h1 id="heading">About Me</h1>
-                <p id="para">I am a computer science undergrad, pursuing my Bachelor’s of Technology in Computer Science. I have a passion for artificial intelligence and computer programming. This passion has given me the ability to self-learn & program for a multitude of things, including AI/ML.
-                <br><br>I am open to learning new things and getting involved with new projects that can help me learn or apply all I have learned.</p>
-            </div>
-        </div>
+<section class="hero container terminal">
+  <div class="terminal-bar">
+    <div class="dot red"></div>
+    <div class="dot yellow"></div>
+    <div class="dot green"></div>
+  </div>
 
-        <div class="container">
-            <div id="experience">
-                <h1 id="sub-h">Experience</h1>
-                <div id="para-container">
-                    <span class="light-bold">AI/ML Intern</span> @Lakebrains Technologies, Udaipur, Rajasthan, India<br>
-                    (Feb'22 - Jul'22)<br>
-                    <ul>
-                        <li>Contributed to text-based <span class="light-bold">empathy classification models</span></li>
-                        <li>Deployed the models as REST API using <span class="light-bold">AWS Lambda</span></li>
-                        <li>Created interactive <span class="light-bold">visualization tools</span> for large datasets using <span class="light-bold">Holoviz</span>, and its deployment on <span class="light-bold">AWS EC2</span> to serve user requests.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="prompt">$ whoami</div>
+    <h1>Arvind Suthar</h1>
+    <p>
+      Backend Software Engineer with hands-on experience building
+      distributed systems, charger management platforms, and
+      payment-heavy applications at scale.
+    </p>
+    <a href="#experience" class="btn">$ cat experience.log</a>
+  </div>
+</section>
 
-        <div class="foot-container bg-dark">
-            <span class="center-text light-bold">Get in touch at arvindsuthar198@gmail.com</span>
-        </div>
-    </section>
+<section id="about" class="section container">
+  <h2>$ about</h2>
+  <p>
+    I focus on backend systems where
+    performance, reliability, and observability matter.
+    I enjoy reducing latency, reasoning about edge cases,
+    and shipping systems that stay boring in production.
+  </p>
+</section>
+
+<section id="experience" class="section container">
+  <h2>$ experience</h2>
+
+  <div class="card">
+    <h3>YoCharge - SDE-1</h3>
+    <div class="meta">Jun 2025 - Present · Udaipur, Rajasthan</div>
+    <ul>
+      <li>
+        Built and optimized a charger management system using OCPP,
+        vehicle management, and payment modules.
+      </li>
+      <li>
+        Reduced API response times from ~46s to ~1s using Redis caching
+        and Kafka-based streaming.
+      </li>
+      <li>
+        Developed scalable microservices with Django, DRF, FastAPI,
+        PostgreSQL; deployed via Docker & Kubernetes.
+      </li>
+      <li>
+        Integrated payment gateways (Stripe), async processing with
+        RabbitMQ, and observability via GrayLog & Portainer.
+      </li>
+    </ul>
+    <div class="tags">
+      <span>Django</span><span>FastAPI</span><span>Kafka</span><span>Redis</span>
+      <span>RabbitMQ</span><span>Docker</span><span>Kubernetes</span><span>OCPP</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Kadel Labs - Software Engineer</h3>
+    <div class="meta">Apr 2024 - Apr 2025 · Star Employee 2024</div>
+    <ul>
+      <li>
+        Built high-volume web scrapers using Selenium and async Python
+        to extract large-scale datasets reliably.
+      </li>
+      <li>
+        Led development of a multi-tenant SaaS platform with Django & DRF,
+        implementing RBAC and tenant isolation.
+      </li>
+    </ul>
+    <div class="tags">
+      <span>Django</span><span>DRF</span><span>Selenium</span>
+      <span>PostgreSQL</span><span>Docker</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Urban Management Centre - Jr. Software Engineer</h3>
+    <div class="meta">Aug 2023 - Apr 2024 · Ahmedabad, Gujarat</div>
+    <ul>
+      <li>
+        Worked on data-intensive government portals for NAMASTE
+        (MoSJE & Ministry of Housing).
+      </li>
+      <li>
+        Contributed to redesign and deployment of the GARIMA
+        Employer Management System (Govt. of Odisha).
+      </li>
+    </ul>
+    <div class="tags">
+      <span>Laravel</span><span>Flask</span><span>MySQL</span>
+      <span>Jenkins</span><span>Linux</span>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="section container">
+  <h2>$ skills</h2>
+  <div class="tags">
+    <span>Python</span><span>PHP</span><span>JavaScript</span><span>SQL</span>
+    <span>Django</span><span>Flask</span><span>Laravel</span>
+    <span>PostgreSQL</span><span>MySQL</span>
+    <span>Redis</span><span>Kafka</span><span>Docker</span><span>Kubernetes</span>
+    <span>Linux</span><span>Git</span>
+  </div>
+</section>
+
+<section id="contact" class="section container">
+  <h2>$ contact</h2>
+  <p>Email → <a href="mailto:arvindsuthar198@gmail.com">arvindsuthar198@gmail.com</a></p>
+  <p>LinkedIn → <a href="https://linkedin.com/in/arvind-suthar" target="_blank">linkedin.com/in/arvind-suthar</a></p>
+  <p>GitHub → <a href="https://github.com/asxcode" target="_blank">github.com/asxcode</a></p>
+  <p>Phone → +91 7506159531</p>
+</section>
+
+<footer>
+  arvind@backend:~$ exit
+</footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(anchor.getAttribute('href'))
+        .scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
 </body>
 </html>
